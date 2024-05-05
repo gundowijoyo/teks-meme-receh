@@ -26,4 +26,6 @@ clearInterval((b))
 },500)
 }
  })
- 
+ tog.addEventListener("click",()=>{
+window.open("https://github.com/guns-joy/teks-meme-receh.git","_blank");
+ })
