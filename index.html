@@ -1,1 +1,84 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" />
+  <title>Teks Candaan</title>
+</head>
+<body>
+ <div class="connav">
+   <img width="40" height="40" src="https://img.icons8.com/emoji/48/rolling-on-the-floor-laughing.png" alt="smile"/>
+  <h2>Teks Candaan</h2>
+ </div>
+ <!--content-->
+ <div class="kgd">
+ <div class="gd">
+   <div class="conb">
+   <div class="box">
+     <div id="animate">
+       <div class="cens">
+
+       </div>
+     </div>
+    <div class="ccp">
+  <button id="cp">Salin</button>
+  <button id="bm">Berhasil Menyalin</button>
+  </div>
+<p id="rs">
+  Welcome Di kata kata Candaan.Selamat berbahagia friend
+</p>
+   </div>
+   </div>
+   <div class="next">
+  <input type="submit" id="next" value="Selanjutnya"/>  </div>
+   </div>
+   </div>
+ <input type="text" id="cip" style="width:1px;opacity;0;transform:scale(0);">
+ 
+ <div class="c">
+ <div class="confot">
+ <footer align="center">
+  Copyright @2024.By Gun.|<span id="tog">Open Source</span></footer>
+ </div>
+ </div>
+
+<div class="loading">
+  <img src="https://s12.gifyu.com/images/SadJq.gif" alt="loading">
+</div>
+
+ <script>
+ next.addEventListener("click",()=>{
+   fetch("https://candaan-api.vercel.app/api/text/random?count=2")
+   .then(respons => respons.json())
+   .then(result =>{
+     console.log(result)
+ let data = result.data
+ rs.innerText = data 
+ cip.value = rs.innerText 
+ document.querySelector('.loading').style.display = "none";
+   });
+document.querySelector('.loading').style.display = "block";
+ });
+ 
+cp.addEventListener("click",()=>{
+ cip.select();
+document.execCommand("copy");
+if(cp){
+let b = setInterval(()=>{
+cp.style.display = "none";
+bm.style.display = "block";
+},200)
+setTimeout(()=>{
+ cp.style.display = "block";
+ bm.style.display = "none";
+clearInterval((b))
+},500)
+}
+ })
+ 
+ </script>
+</body>
+  </html>
